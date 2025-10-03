@@ -1,0 +1,29 @@
+{
+  "name": "duhoc-duc-backend",
+  "version": "1.0.0",
+  "description": "Backend API cho trung tâm du học Đức",
+  "main": "src/app.js",
+"scripts": {
+  "start": "cross-env TZ=Asia/Ho_Chi_Minh node src/app.js",
+  "dev": "cross-env TZ=Asia/Ho_Chi_Minh nodemon src/app.js"
+},
+  "dependencies": {
+    "axios": "^1.11.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.18",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.1",
+    "mysql2": "^3.6.0",
+    "pg": "^8.16.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.32.1"
+  },
+  "devDependencies": {
+    "cross-env": "^10.0.0",
+    "nodemon": "^3.0.1"
+  }
+}

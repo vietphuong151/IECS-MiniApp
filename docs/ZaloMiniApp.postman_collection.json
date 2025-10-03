@@ -1,0 +1,691 @@
+{
+	"info": {
+		"_postman_id": "4ed386fb-b95e-43a1-9715-b4be965bc130",
+		"name": "ZaloMiniApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34128727"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Admin\",\r\n  \"email\": \"admin@gmail.com\",\r\n  \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/api/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"email\": \"admin@gmail.com\", \r\n    \"password\": \"123456\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/api/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Sync Zalo User Account",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Courses",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTA0MjcxNzYsImV4cCI6MTc1MDUxMzU3Nn0.wcsKpch4YHjpHFxYOHs037RoDDcBC6G8k6ZAJEj5248"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Khóa học tiếng Đức B1\",\r\n  \"description\": \"Nâng cao kỹ năng giao tiếp\",\r\n  \"startDate\": \"2024-10-01\",\r\n  \"endDate\": \"2024-12-31\"\r\n}"
+						},
+						"url": "http://localhost:5000/api/courses"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTA0MjcxNzYsImV4cCI6MTc1MDUxMzU3Nn0.wcsKpch4YHjpHFxYOHs037RoDDcBC6G8k6ZAJEj5248"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Khóa học tiếng Đức A1\",\r\n  \"description\": \"Căn bản tiếng Đức\",\r\n  \"startDate\": \"2024-10-01\",\r\n  \"endDate\": \"2024-12-31\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/courses/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTA0MjcxNzYsImV4cCI6MTc1MDUxMzU3Nn0.wcsKpch4YHjpHFxYOHs037RoDDcBC6G8k6ZAJEj5248"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Khóa học tiếng Đức A1\",\r\n  \"description\": \"Căn bản tiếng Đức\",\r\n  \"startDate\": \"2024-10-01\",\r\n  \"endDate\": \"2024-12-31\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/courses/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Khóa học tiếng Đức B1\",\r\n  \"description\": \"Nâng cao kỹ năng giao tiếp\",\r\n  \"startDate\": \"2024-10-01\",\r\n  \"endDate\": \"2024-12-31\"\r\n}"
+						},
+						"url": "http://localhost:5000/api/courses/5"
+					},
+					"response": []
+				},
+				{
+					"name": "Get by ID Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Khóa học tiếng Đức B1\",\r\n  \"description\": \"Nâng cao kỹ năng giao tiếp\",\r\n  \"startDate\": \"2024-10-01\",\r\n  \"endDate\": \"2024-12-31\"\r\n}"
+						},
+						"url": "http://localhost:5000/api/courses/5"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Staff",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTA0MjcxNzYsImV4cCI6MTc1MDUxMzU3Nn0.wcsKpch4YHjpHFxYOHs037RoDDcBC6G8k6ZAJEj5248"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Khóa học tiếng Đức B1\",\r\n  \"description\": \"Nâng cao kỹ năng giao tiếp\",\r\n  \"startDate\": \"2024-10-01\",\r\n  \"endDate\": \"2024-12-31\"\r\n}"
+						},
+						"url": "http://localhost:5000/api/courses"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTA0MjcxNzYsImV4cCI6MTc1MDUxMzU3Nn0.wcsKpch4YHjpHFxYOHs037RoDDcBC6G8k6ZAJEj5248"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Khóa học tiếng Đức A1\",\r\n  \"description\": \"Căn bản tiếng Đức\",\r\n  \"startDate\": \"2024-10-01\",\r\n  \"endDate\": \"2024-12-31\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/courses/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTA0MjcxNzYsImV4cCI6MTc1MDUxMzU3Nn0.wcsKpch4YHjpHFxYOHs037RoDDcBC6G8k6ZAJEj5248"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Khóa học tiếng Đức A1\",\r\n  \"description\": \"Căn bản tiếng Đức\",\r\n  \"startDate\": \"2024-10-01\",\r\n  \"endDate\": \"2024-12-31\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/courses/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Khóa học tiếng Đức B1\",\r\n  \"description\": \"Nâng cao kỹ năng giao tiếp\",\r\n  \"startDate\": \"2024-10-01\",\r\n  \"endDate\": \"2024-12-31\"\r\n}"
+						},
+						"url": "http://localhost:5000/api/courses"
+					},
+					"response": []
+				},
+				{
+					"name": "Get by Position",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Khóa học tiếng Đức B1\",\r\n  \"description\": \"Nâng cao kỹ năng giao tiếp\",\r\n  \"startDate\": \"2024-10-01\",\r\n  \"endDate\": \"2024-12-31\"\r\n}"
+						},
+						"url": "http://localhost:5000/api/courses/5"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admissons",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTA0MjcxNzYsImV4cCI6MTc1MDUxMzU3Nn0.wcsKpch4YHjpHFxYOHs037RoDDcBC6G8k6ZAJEj5248"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"title\": \"Tuyển sinh du học Đức 2025\",\r\n    \"content\": \"Thông tin chi tiết về đợt tuyển sinh...\",\r\n    \"deadline\": \"2025-08-31T00:00:00.000Z\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/admissions"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTA0MjcxNzYsImV4cCI6MTc1MDUxMzU3Nn0.wcsKpch4YHjpHFxYOHs037RoDDcBC6G8k6ZAJEj5248"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"title\": \"Tuyển sinh du học Đức 2025\",\r\n    \"content\": \"Loa Loa Loa...\",\r\n    \"deadline\": \"2025-08-31T00:00:00.000Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/admissions/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTA0MjcxNzYsImV4cCI6MTc1MDUxMzU3Nn0.wcsKpch4YHjpHFxYOHs037RoDDcBC6G8k6ZAJEj5248"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Khóa học tiếng Đức A1\",\r\n  \"description\": \"Căn bản tiếng Đức\",\r\n  \"startDate\": \"2024-10-01\",\r\n  \"endDate\": \"2024-12-31\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/admissions/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Khóa học tiếng Đức B1\",\r\n  \"description\": \"Nâng cao kỹ năng giao tiếp\",\r\n  \"startDate\": \"2024-10-01\",\r\n  \"endDate\": \"2024-12-31\"\r\n}"
+						},
+						"url": "http://localhost:5000/api/admissions"
+					},
+					"response": []
+				},
+				{
+					"name": "Get by ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Khóa học tiếng Đức B1\",\r\n  \"description\": \"Nâng cao kỹ năng giao tiếp\",\r\n  \"startDate\": \"2024-10-01\",\r\n  \"endDate\": \"2024-12-31\"\r\n}"
+						},
+						"url": "http://localhost:5000/api/admissions/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "News",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTIzOTMzNTEsImV4cCI6MTc1MjQ3OTc1MX0.0IM31s0Jt6gfk0tgyzJYdz3ue8qHELIYVRjwxQL1GqM"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Hành trình du học Đức: Cơ hội, thử thách và những điều cần biết\",\r\n  \"content\": \"Du học Đức từ lâu đã trở thành lựa chọn hàng đầu của nhiều sinh viên Việt Nam bởi chất lượng giáo dục hàng đầu châu Âu, chi phí học tập hợp lý và cơ hội phát triển sự nghiệp rộng mở. Bài viết này sẽ cung cấp cái nhìn tổng quan và chi tiết về hành trình du học tại quốc gia này, từ điều kiện đầu vào, chi phí sinh hoạt, đến những lời khuyên thực tế từ chính các du học sinh.\\n\\n1. Vì sao nên chọn Đức?\\nĐức nổi tiếng với hệ thống giáo dục chất lượng, đặc biệt là trong các lĩnh vực kỹ thuật, công nghệ, kinh tế và y khoa. Các trường đại học ở Đức thường có học phí rất thấp, thậm chí là miễn phí đối với bậc cử nhân và thạc sĩ tại các trường công lập. Ngoài ra, Đức là nền kinh tế lớn nhất châu Âu, cung cấp nhiều cơ hội thực tập, làm thêm và việc làm sau khi tốt nghiệp.\\n\\n2. Yêu cầu đầu vào và quá trình nộp hồ sơ\\nSinh viên quốc tế cần đáp ứng một số điều kiện như:\\n- Tốt nghiệp THPT và đã hoàn thành ít nhất 1 năm đại học tại Việt Nam (đối với hệ cử nhân).\\n- Chứng chỉ tiếng Đức (TestDaF, DSH) hoặc tiếng Anh (IELTS/TOEFL) tùy theo chương trình học.\\n- Hồ sơ xin visa bao gồm giấy báo nhập học, chứng minh tài chính (tài khoản phong tỏa khoảng 11.208 EUR/năm), bảo hiểm y tế và thư động lực.\\n\\n3. Chi phí sinh hoạt tại Đức\\nMặc dù học phí thấp, nhưng sinh viên cần chuẩn bị chi phí sinh hoạt khoảng 850 – 1.200 EUR/tháng bao gồm:\\n- Nhà ở: 250 – 450 EUR\\n- Ăn uống, đi lại, bảo hiểm: 300 – 500 EUR\\n- Các khoản chi cá nhân và học tập: 100 – 200 EUR\\n\\nNhiều sinh viên lựa chọn làm thêm (tối đa 20 giờ/tuần) để trang trải cuộc sống và tích lũy kinh nghiệm.\\n\\n4. Văn hóa và cuộc sống sinh viên\\nĐức là một quốc gia đa văn hóa, an toàn và thân thiện với sinh viên quốc tế. Các thành phố như Berlin, Munich, Hamburg hay Frankfurt đều có cộng đồng sinh viên Việt Nam sôi nổi, nhiều hoạt động hỗ trợ tân sinh viên. Cuộc sống ở Đức cũng đề cao tính tự lập, kỷ luật và đúng giờ – điều mà sinh viên Việt Nam cần thích nghi.\\n\\n5. Cơ hội sau tốt nghiệp\\nSinh viên quốc tế sau khi tốt nghiệp có thể ở lại Đức tối đa 18 tháng để tìm việc. Với bằng cấp từ các trường đại học Đức, cơ hội làm việc trong các tập đoàn lớn, công ty công nghệ hoặc nghiên cứu khoa học là rất cao. Ngoài ra, nhiều sinh viên chọn học tiếp lên thạc sĩ, tiến sĩ, hoặc định cư lâu dài tại Đức.\\n\\n6. Lời khuyên từ du học sinh\\n“Chuẩn bị kỹ lưỡng từ hồ sơ, tiếng Đức và tìm hiểu kỹ về trường, ngành học sẽ giúp bạn có khởi đầu thuận lợi. Đức là nơi lý tưởng để học tập và trưởng thành, nhưng cũng đòi hỏi bạn phải tự lập và chủ động học hỏi không ngừng.” – Minh Phương, du học sinh ngành Khoa học Máy tính tại TU Berlin chia sẻ.\\n\\n---\\n\\nDu học Đức là một hành trình đáng giá, không chỉ mở ra cánh cửa tri thức mà còn giúp bạn khám phá bản thân, trưởng thành và hòa nhập vào một môi trường quốc tế năng động. Nếu bạn đang ấp ủ giấc mơ du học, hãy bắt đầu từ hôm nay!\",\r\n    \"image_url\": \"https://iecs.vn/wp-content/smush-webp/2024/08/duhocngheduc2025-1030x539.png.webp\",\r\n    \"is_published\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/api/news"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}/api/news"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All (From IECS)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}/api/news"
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Slug (From IECS)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}/api/news"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consults",
+			"item": [
+				{
+					"name": "Register Consult",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Nguyễn Thanh Hoà\",\r\n  \"email\": \"hoathanh@gmail.com\",\r\n  \"phone\": \"0912345678\",\r\n  \"message\": \"Tôi muốn được tư vấn về du học Đức cho con tôi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/consults"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Consult",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get Booked Date",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Nguyễn Thanh Hoà\",\r\n  \"email\": \"hoathanh@gmail.com\",\r\n  \"phone\": \"0912345678\",\r\n  \"message\": \"Tôi muốn được tư vấn về du học Đức cho con tôi\"\r\n}"
+						},
+						"url": "http://localhost:5000/api/consults/booked-dates"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Consult Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJBZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1ODAzNzg0NSwiZXhwIjoxNzU4MTI0MjQ1fQ.vZkgWZK2NnhLXNiRHW6qow9ERHNPUsvi9fSH9pZQmZI"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"done\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/consults/1/status"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Students",
+			"item": [
+				{
+					"name": "Add Student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBZG1pbiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU5NDE3NjI2LCJleHAiOjE3NTk1MDQwMjZ9.9rVZZTN-Hl_o_9WBi8EEtrqSDWoJ9g3yIb8KhbFMuwo"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"studentCode\": \"HS2025001\",\r\n  \"name\": \"Nguyễn Thành Duy\",\r\n  \"dateOfBirth\": \"2010-05-15\",\r\n  \"gender\": \"male\",\r\n  \"phone\": \"0912345678\",\r\n  \"class\": \"BTO1\",\r\n  \"school\": \"Bình Thạnh\",\r\n  \"metadata\": {}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/api/students/admin"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Students",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update Student",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Student",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base_url}}/api/students/admin/{id}"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Details Student",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Parents",
+			"item": [
+				{
+					"name": "Claim Students",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJkdXljb25nIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3NTk0MTgxMzAsImV4cCI6MTc1OTUwNDUzMH0.U7ve9Z-465NRsSFYNikhR5IupnAqxPgVBqBCPMWpC1M"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"studentCode\": \"HS2025001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/api/students/claim"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Attendances",
+			"item": [
+				{
+					"name": "Attendances",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1OTQxODQ5MCwiZXhwIjoxNzU5NTA0ODkwfQ.CHc_P2AfGU31QE9vfuR2H2tXYv6fCJHz1F2S3_amYLI"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"studentId\": 3,\r\n  \"date\": \"2025-10-02\",\r\n  \"status\": \"late\",\r\n  \"note\": \"Đi học trễ 20 phút\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/api/attendances"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Attendances By Student ID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update Attendances",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1OTQxODQ5MCwiZXhwIjoxNzU5NTA0ODkwfQ.CHc_P2AfGU31QE9vfuR2H2tXYv6fCJHz1F2S3_amYLI"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"absent\",\r\n  \"note\": \"Nghỉ có phép\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/api/attendances/3"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

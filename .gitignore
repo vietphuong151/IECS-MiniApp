@@ -1,0 +1,50 @@
+# Node modules
+node_modules/
+
+# Environment files
+.env      
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+build/
+dist/
+
+# Coverage reports
+coverage/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+
+# Database (SQLite or others)
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+
+# IDE/editor settings
+.vscode/
+.idea/
+.DS_Store
+*.sublime-workspace
+*.sublime-project
+
+# OS-specific files
+Thumbs.db
+
+# Sequelize CLI migrations/seeds logs (optional)
+.sequelize*
+
+# Ignore dump files (if using pg_dump or mysql dump)
+*.sql
+*.dump
+
+# Ignore Prisma if used
+prisma/dev.db
